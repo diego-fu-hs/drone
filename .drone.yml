@@ -1,5 +1,6 @@
 workspace:
-  base: ${GOPATH}
+  base: /go
+  path: src/github.com/diego-fu-hs/drone
 
 pipeline:
   backend:
@@ -8,14 +9,3 @@ pipeline:
       - go get
       - go build
       - go test
-
-  frontend:
-    image: node:6
-    commands:
-      - npm install
-      - npm test
-
-  notify:
-    image: plugins/slack
-    channel: developers
-    username: drone
