@@ -1,3 +1,6 @@
+workspace:
+  base: ${GOPATH}
+
 pipeline:
   backend:
     image: golang
