@@ -9,3 +9,13 @@ pipeline:
       - go get
       - go build
       - go test
+
+  deploy:
+    image: quay.io/honestbee/drone-kubernetes
+    kubernetes_server: ${KUBERNETES_SERVER}
+    kubernetes_token: ${KUBERNETES_TOKEN}
+    deployment: diego-drone-deployment
+    repo: diego-fu-hs/drone
+    container: diego-drone-container
+    tag:
+      - latest
