@@ -12,8 +12,7 @@ pipeline:
 
   deploy:
     image: quay.io/honestbee/drone-kubernetes
-    kubernetes_server: ${KUBERNETES_SERVER}
-    kubernetes_token: ${KUBERNETES_TOKEN}
+    kubernetes_server: https://dev-k8s-controllers.hootsuitemedia.com:6443
     deployment: diego-drone-deployment
     repo: diego-fu-hs/drone
     container: diego-drone-container
